@@ -9,13 +9,27 @@
 </head>
 
 <body>
-  <!-- remember to use semantic tags (main, article, header, etc) from module 1 stuff -->
-  <!-- thinking layout should be a title, some directions, and then some space -->
-  <!-- after space, have an input box and a button -->
-  <!-- after button, maybe have some blank boxes that will get filled up with the recipes? recipe cards lol -->
-  <!-- or, maybe look into material/botstrap and see if i can get a neat flippable recipe card thing working!! -->
+  <main>
+
+    <header>
+      <h1>What the Fridge?! 🥕</h1>
+      <p>Enter the ingredients you have, separated by commas, to find recipes you can make!</p>
+    </header>
+
+    <form id="ingredient-form">
+      <input type="text" id="ingredients" placeholder="e.g. apples, flour, sugar" />
+      <button type="submit">Find Recipes</button>
+    </form>
+
+    <div id="recipes-container"></div>
+  </main>
+  <!-- script here to contect to js file -->
 </body>
 
-<!-- script here i think, gotta double check -->
-
 </html>
+
+<!-- remember to use semantic tags (main, article, header, etc) from module 1 stuff -->
+<!-- thinking layout should be a title, some directions, and then some space -->
+<!-- after space, have an input box and a button -->
+<!-- after button, maybe have some blank boxes that will get filled up with the recipes? recipe cards lol -->
+<!-- or, maybe look into material/botstrap and see if i can get a neat flippable recipe card thing working!! -->
