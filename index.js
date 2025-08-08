@@ -1,4 +1,3 @@
-// const SPOONACULAR_API_KEY = '7c307837d202485da447784f092bda2e';
 const SPOONACULAR_API_KEY = '';
 
 const recipesContainer = document.getElementById("recipes-container");
