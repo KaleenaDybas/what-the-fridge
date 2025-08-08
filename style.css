@@ -1,0 +1,87 @@
+:root {
+  --primary: #5f0f40;
+  --accent1: #9a031e;
+  --accent2: #fb8b24;
+  --accent3: #ff8217;
+  --accent4: #0f4c5c;
+  --text-color: #333;
+  --background: #f7ede2;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #f7ede2;
+  color:#f7ede2;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-image: url('fridge-page-background-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+
+header {
+  background: #0f4c5c;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: #ff8217; 
+}
+
+.app {
+  max-width: 600px;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+
+
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  background:  #5f0f40;
+  color: #f7ede2;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: #ff8217;
+}
+
+
+#recipes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe {
+  background: #f7ede2;
+  border: 1px solid #0f4c5c;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
