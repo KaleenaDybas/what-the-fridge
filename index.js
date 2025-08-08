@@ -1,4 +1,16 @@
 console.log("Hello from the otter sideeeeeee");
+const SPOONACULAR_API_KEY = '';
+
+async function asyncStuff(ingredients) {
+  const response = await fetch(
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${
+      ingredients
+    }&number=1&apiKey=${SPOONACULAR_API_KEY}`
+  );
+  console.log("RESPONSE")
+  console.log(response)
+}
+
 
 // Hook into the form input to get the users input value to use for our api call
 const inputElement = document.getElementById("ingredients");
@@ -20,7 +32,19 @@ fetchRecipes(userInput)
 function fetchRecipes(ingredients) {
   // fetch spoonacular recipes
   console.log(ingredients)
+  return fakeAPIResponse;
 } 
+
+// All the console logs above are getting put in the dev console each time the page loads right now
+// I need to make sure they are only called when I click the submit button or I'll run out 
+// of my free spoonacular api stuff/token?
+
+// hook into the form submit button
+const submitButton = document.getElementById(fetch-recipes-btn)
+// add event listener to submit
+submitButton.addEventListener("submit", handleRecipe)
+// when clicked, then do all the input stuff above
+
 
 
 // After we have our api recipe data, we will use that data to display the recipes found.
