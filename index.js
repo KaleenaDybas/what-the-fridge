@@ -1,3 +1,4 @@
+// const SPOONACULAR_API_KEY = '7c307837d202485da447784f092bda2e';
 const SPOONACULAR_API_KEY = '';
 
 const recipesContainer = document.getElementById("recipes-container");
@@ -14,20 +15,6 @@ function validateInput(input) {
   return !regex.test(input);
 }
 
-async function fetchRecipes(ingredients) {
-  const response = await fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
-    }&number=1&apiKey=${SPOONACULAR_API_KEY}`
-  );
-  const data = await response.json();
-
-  // if (!data.length) {
-  //   appendTextToRecipeContParagraph("No recipes found.");
-  //   return;
-  // }
-
-  displayRecipeCard(fakeAPIResponse)
-}
 
 function handleFetchingRecipes(e) {
   e.preventDefault()
@@ -36,7 +23,7 @@ function handleFetchingRecipes(e) {
   const userInput = inputedIngredients.value;
   userInput.trim()
 
-   if (!validateInput(userInput)) {
+  if (!validateInput(userInput)) {
     document.getElementById("error-message").style.display = "block";
     return;
   }
@@ -51,33 +38,87 @@ function handleFetchingRecipes(e) {
   fetchRecipes(userInput)
 }
 
+async function fetchRecipes(ingredients) {
+  // const response = await fetch(
+  //   `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
+  //   }&number=1&apiKey=${SPOONACULAR_API_KEY}`
+  // );
+  // const data = await response.json();
+
+  // if (!data.length) {
+  //   appendTextToRecipeContParagraph("No recipes found.");
+  //   return;
+  // }
+
+  displayRecipeCard(fakeAPIResponse)
+  // displayRecipeCard(data)
+}
+
 
 function displayRecipeCard(recipes) {
   appendTextToRecipeContParagraph("")
 
   recipes.forEach(recipe => {
-    console.log(recipe)
-
     const div = document.createElement("div");
-    div.className = "recipe";
-
-    const title = document.createElement("h3")
-    title.innerText = recipe.title
-    div.appendChild(title);
+    div.className = "recipe-card";
 
     const image = document.createElement("img")
     image.src = recipe.image
     image.alt = recipe.title
-    image.width = 100;
+    image.className = "logo";
     div.appendChild(image);
 
-    const usedIngredients = document.createElement("p");
-    usedIngredients.textContent = `Used ingredients: ${recipe.usedIngredientCount}`;
-    div.appendChild(usedIngredients);
+    const title = document.createElement("h2")
+    title.innerText = recipe.title
+    div.appendChild(title);
 
-    const missingIngredients = document.createElement("p");
-    missingIngredients.textContent = `Missing ingredients: ${recipe.missedIngredientCount}`;
-    div.appendChild(missingIngredients);
+    const usedTitle = document.createElement("div");
+    usedTitle.className = "section-title";
+    usedTitle.textContent = `Used Ingredients (${recipe.usedIngredientCount})`;
+    div.appendChild(usedTitle);
+
+    const usedList = document.createElement("ul");
+    usedList.className = "ingredients-list";
+    recipe.usedIngredients.forEach(ingredient => {
+      const li = document.createElement("li");
+      li.className = "ingredient-item used";
+
+      const img = document.createElement("img");
+      img.src = ingredient.image;
+      img.alt = ingredient.name;
+
+      const text = document.createElement("span");
+      text.textContent = `${ingredient.amount} ${ingredient.unit} of ${ingredient.name}`;
+
+      li.appendChild(img);
+      li.appendChild(text);
+      usedList.appendChild(li);
+    });
+    div.appendChild(usedList);
+
+    const missedTitle = document.createElement("div");
+    missedTitle.className = "section-title";
+    missedTitle.textContent = `Missing Ingredients (${recipe.missedIngredientCount})`;
+    div.appendChild(missedTitle);
+
+    const missedList = document.createElement("ul");
+    missedList.className = "ingredients-list";
+    recipe.missedIngredients.forEach(ingredient => {
+      const li = document.createElement("li");
+      li.className = "ingredient-item missing";
+
+      const img = document.createElement("img");
+      img.src = ingredient.image;
+      img.alt = ingredient.name;
+
+      const text = document.createElement("span");
+      text.textContent = `${ingredient.amount} ${ingredient.unit} of ${ingredient.name}`;
+
+      li.appendChild(img);
+      li.appendChild(text);
+      missedList.appendChild(li);
+    });
+    div.appendChild(missedList);
 
     const link = document.createElement("a");
     link.href = `https://spoonacular.com/recipes/${recipe.title.toLowerCase().replace(/ /g, "-")}-${recipe.id}`;

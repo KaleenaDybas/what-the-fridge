@@ -157,3 +157,41 @@ const fakeAPIResponse =
       "usedIngredients": []
     }
   ]
+
+// const fakeAPIResponse = [
+//   {
+//     "id": 664206,
+//     "title": "Udon Noodles Chicken Tempura",
+//     "image": "https://img.spoonacular.com/recipes/664206-312x231.jpg",
+//     "imageType": "jpg",
+//     "usedIngredientCount": 2,
+//     "missedIngredientCount": 3,
+//     "missedIngredients":
+//       [
+//         {
+//           "id": 6194,
+//           "amount": 1.0,
+//           "unit": "tsp",
+//           "unitLong": "teaspoon",
+//           "unitShort": "tsp",
+//           "aisle": "Canned and Jarred",
+//           "name": "chicken broth cube-1",
+//           "original": "Granulated dashi-1tsp or Chicken broth cube-1",
+//           "originalName": "Granulated dashi or Chicken broth cube-1", "meta": [],
+//           "image": "https://img.spoonacular.com/ingredients_100x100/chicken-broth.png"
+//         },
+//         {
+//           "id": 43479,
+//           "amount": 1.0,
+//           "unit": "tbsp",
+//           "unitLong": "tablespoon",
+//           "unitShort": "Tbsp",
+//           "aisle": "Alcoholic Beverages",
+//           "name": "rice wine", "original": "Hon mirin-1tbsp or Rice wine-1tbsp",
+//           "originalName": "Hon mirin or Rice wine-1tbsp",
+//           "meta": [],
+//           "image": "https://img.spoonacular.com/ingredients_100x100/fish-sauce.jpg"
+//         },
+//         { "id": 11291, "amount": 2.0, "unit": "tbsp", "unitLong": "tablespoons", "unitShort": "Tbsp", "aisle": "Produce", "name": "spring onions greens", "original": "Spring onions greens (chopped)-2tbsp", "originalName": "Spring onions greens (chopped)", "meta": ["chopped", "()"], "image": "https://img.spoonacular.com/ingredients_100x100/spring-onions.jpg" }], 
+//         "usedIngredients": [{ "id": 5006, "amount": 200.0, "unit": "g", "unitLong": "grams", "unitShort": "g", "aisle": "Meat", "name": "chicken", "original": "Chicken boneless (cubed)-200gm", "originalName": "Chicken boneless (cubed)", "meta": ["boneless", "cubed", "()"], "extendedName": "boneless chicken", "image": "https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg" }, { "id": 98966, "amount": 2.0, "unit": "cups", "unitLong": "cups", "unitShort": "cup", "aisle": "Ethnic Foods", "name": "udon noodles", "original": "Udon frozen noodles (cooked)-2cups", "originalName": "Udon frozen noodles (cooked)", "meta": ["frozen", "cooked", "()"], "extendedName": "cooked frozen udon noodles", "image": "https://img.spoonacular.com/ingredients_100x100/dry-udon-noodles.png" }], "unusedIngredients": [{ "id": 1006615, "amount": 1.0, "unit": "serving", "unitLong": "serving", "unitShort": "serving", "aisle": "Canned and Jarred", "name": "broth", "original": "broth", "originalName": "broth", "meta": [], "image": "https://img.spoonacular.com/ingredients_100x100/chicken-broth.png" }], "likes": 1
+//   }]
