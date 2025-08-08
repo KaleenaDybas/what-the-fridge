@@ -6,6 +6,8 @@ What the Fridge was made with you in mind.
 
 This app lets you enter whatever ingredients you have on hand and instantly find recipes that use them. It’s a fun and practical way to stretch what’s in your fridge, discover new meals, and avoid yet another trip to the store.
 
+<img width="976" height="798" alt="Screenshot 2025-08-08 at 12 02 31 PM" src="https://github.com/user-attachments/assets/84ac0b26-9ff8-458d-9a43-1141a156a1ca" />
+
 ## Project Purpose
 This project was a challenging but super rewarding way to bring together everything I’ve been learning through the Code:You program. From form handling to working with APIs and updating the DOM, this was a full-on practice ground for my growing JavaScript skills.
 
