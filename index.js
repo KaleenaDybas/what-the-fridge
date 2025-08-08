@@ -9,6 +9,11 @@ function appendTextToRecipeContParagraph(text) {
   paraTag.innerText = text
 }
 
+function validateInput(input) {
+  const regex = /\d/; // Regular expression to check for numbers aka `d` for digits
+  return !regex.test(input);
+}
+
 async function fetchRecipes(ingredients) {
   const response = await fetch(
     `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
@@ -26,9 +31,17 @@ async function fetchRecipes(ingredients) {
 
 function handleFetchingRecipes(e) {
   e.preventDefault()
+
   const inputedIngredients = document.getElementById("ingredients");
   const userInput = inputedIngredients.value;
   userInput.trim()
+
+   if (!validateInput(userInput)) {
+    document.getElementById("error-message").style.display = "block";
+    return;
+  }
+
+  document.getElementById("error-message").style.display = "none";
 
   if (!userInput.length) {
     return;
@@ -79,4 +92,4 @@ function displayRecipeCard(recipes) {
 
 // Stretch goal:
 // ability to convert recipe from cups to grams and back
-// number validation on input
+// DONE - number validation on input
