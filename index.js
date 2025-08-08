@@ -34,19 +34,19 @@ function handleFetchingRecipes(e) {
 }
 
 async function fetchRecipes(ingredients) {
-  // const response = await fetch(
-  //   `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
-  //   }&number=1&apiKey=${SPOONACULAR_API_KEY}`
-  // );
-  // const data = await response.json();
+  const response = await fetch(
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
+    }&number=1&apiKey=${SPOONACULAR_API_KEY}`
+  );
+  const data = await response.json();
 
-  // if (!data.length) {
-  //   appendTextToRecipeContParagraph("No recipes found.");
-  //   return;
-  // }
+  if (!data.length) {
+    appendTextToRecipeContParagraph("No recipes found.");
+    return;
+  }
 
-  displayRecipeCard(fakeAPIResponse)
-  // displayRecipeCard(data)
+  // displayRecipeCard(fakeAPIResponse)
+  displayRecipeCard(data)
 }
 
 function displayRecipeCard(recipes) {
@@ -56,18 +56,18 @@ function displayRecipeCard(recipes) {
     const div = document.createElement("div");
     div.className = "recipe-card";
 
+    const title = document.createElement("h3")
+    title.innerText = recipe.title
+    div.appendChild(title);
+
     const image = document.createElement("img")
     image.src = recipe.image
     image.alt = recipe.title
     image.className = "logo";
     div.appendChild(image);
 
-    const title = document.createElement("h2")
-    title.innerText = recipe.title
-    div.appendChild(title);
-
     const usedTitle = document.createElement("div");
-    usedTitle.className = "section-title";
+    usedTitle.className = "section-title-used";
     usedTitle.textContent = `Used Ingredients (${recipe.usedIngredientCount})`;
     div.appendChild(usedTitle);
 
@@ -91,7 +91,7 @@ function displayRecipeCard(recipes) {
     div.appendChild(usedList);
 
     const missedTitle = document.createElement("div");
-    missedTitle.className = "section-title";
+    missedTitle.className = "section-title-missing";
     missedTitle.textContent = `Missing Ingredients (${recipe.missedIngredientCount})`;
     div.appendChild(missedTitle);
 
