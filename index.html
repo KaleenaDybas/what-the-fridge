@@ -12,8 +12,9 @@
   <main>
 
     <header>
-      <h1>What the Fridge?! 🥕</h1>
-      <p>Enter the ingredients you have, separated by commas, to find recipes you can make!</p>
+      <!-- <h1>What the Fridge?! 🥕</h1> -->
+      <img src="my-fridge-logo-final.svg" alt="What the Fridge Logo" class="logo" />
+      <h2>Enter the ingredients you have, separated by commas, to find recipes you can make!</h2>
     </header>
 
     <form id="ingredient-form">
@@ -21,7 +22,128 @@
       <button type="submit">Find Recipes</button>
     </form>
 
-    <div id="recipes-container"></div>
+
+    <!-- new html for pictures with ingredients  -->
+    <div id="recipes-container">
+
+      <div class="recipe-card">
+        <h3>Udon Noodles Chicken Tempura</h3>
+        <img src="https://img.spoonacular.com/recipes/664206-312x231.jpg" alt="Udon Chicken" class="logo" />
+
+
+        <div class="section-title-used">Used Ingredients</div>
+        <ul class="ingredients-list">
+          <li class="ingredient-item used">
+            <img src="https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg" alt="Chicken" />
+            200g of chicken
+          </li>
+          <li class="ingredient-item used">
+            <img src="https://img.spoonacular.com/ingredients_100x100/dry-udon-noodles.png" alt="Udon Noodles" />
+            2 cups of udon noodles
+          </li>
+        </ul>
+
+        <div class="section-title-missing">Missing Ingredients</div>
+        <ul class="ingredients-list">
+          <li class="ingredient-item missing">
+            <img src="https://img.spoonacular.com/ingredients_100x100/chicken-broth.png" alt="Chicken broth" />
+            1 tsp chicken broth cube
+          </li>
+          <li class="ingredient-item missing">
+            <img src="https://img.spoonacular.com/ingredients_100x100/fish-sauce.jpg" alt="Rice Wine" />
+            1 tbsp rice wine
+          </li>
+          <li class="ingredient-item missing">
+            <img src="https://img.spoonacular.com/ingredients_100x100/spring-onions.jpg" alt="Green Onions" />
+            2 tbsp spring onion greens
+          </li>
+        </ul>
+
+        <a href="#">View Full Recipe</a>
+      </div>
+
+
+
+
+      <div class="recipe-card">
+      <h3>Udon Noodles Chicken Tempura</h3>
+      <img src="https://img.spoonacular.com/recipes/664206-312x231.jpg" alt="Udon Chicken" class="logo" />
+
+
+      <div class="section-title-used">Used Ingredients</div>
+      <ul class="ingredients-list">
+        <li class="ingredient-item used">
+          <img src="https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg" alt="Chicken" />
+          200g of chicken
+        </li>
+        <li class="ingredient-item used">
+          <img src="https://img.spoonacular.com/ingredients_100x100/dry-udon-noodles.png" alt="Udon Noodles" />
+          2 cups of udon noodles
+        </li>
+      </ul>
+
+      <div class="section-title-missing">Missing Ingredients</div>
+      <ul class="ingredients-list">
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/chicken-broth.png" alt="Chicken broth" />
+          1 tsp chicken broth cube
+        </li>
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/fish-sauce.jpg" alt="Rice Wine" />
+          1 tbsp rice wine
+        </li>
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/spring-onions.jpg" alt="Green Onions" />
+          2 tbsp spring onion greens
+        </li>
+      </ul>
+
+      <a href="#">View Full Recipe</a>
+    </div>
+
+
+
+
+    <div class="recipe-card">
+      <h3>Udon Noodles Chicken Tempura</h3>
+      <img src="https://img.spoonacular.com/recipes/664206-312x231.jpg" alt="Udon Chicken" class="logo" />
+
+
+      <div class="section-title-used">Used Ingredients</div>
+      <ul class="ingredients-list">
+        <li class="ingredient-item used">
+          <img src="https://img.spoonacular.com/ingredients_100x100/whole-chicken.jpg" alt="Chicken" />
+          200g of chicken
+        </li>
+        <li class="ingredient-item used">
+          <img src="https://img.spoonacular.com/ingredients_100x100/dry-udon-noodles.png" alt="Udon Noodles" />
+          2 cups of udon noodles
+        </li>
+      </ul>
+
+      <div class="section-title-missing">Missing Ingredients</div>
+      <ul class="ingredients-list">
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/chicken-broth.png" alt="Chicken broth" />
+          1 tsp chicken broth cube
+        </li>
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/fish-sauce.jpg" alt="Rice Wine" />
+          1 tbsp rice wine
+        </li>
+        <li class="ingredient-item missing">
+          <img src="https://img.spoonacular.com/ingredients_100x100/spring-onions.jpg" alt="Green Onions" />
+          2 tbsp spring onion greens
+        </li>
+      </ul>
+
+      <a href="#">View Full Recipe</a>
+    </div>
+
+</div>
+  </div>
+  
+
   </main>
   <!-- script here to contect to js file -->
 </body>
@@ -33,3 +155,33 @@
 <!-- after space, have an input box and a button -->
 <!-- after button, maybe have some blank boxes that will get filled up with the recipes? recipe cards lol -->
 <!-- or, maybe look into material/botstrap and see if i can get a neat flippable recipe card thing working!! -->
+
+
+
+<!-- <div id="recipes-container">
+
+      <div class="recipe">
+        <h3>Bacon &amp; Egg Toast Cups</h3>
+        <img src="https://img.spoonacular.com/recipes/633265-312x231.jpg" alt="Bacon &amp; Egg Toast Cups" width="100">
+        <p>Used ingredients: 3</p>
+        <p>Missing ingredients: 1</p>
+        <a href="https://spoonacular.com/recipes/bacon-&amp;-egg-toast-cups-633265" target="_blank">View Full Recipe</a>
+      </div>
+      <div class="recipe">
+        <h3>Bacon &amp; Egg Toast Cups</h3>
+        <img src="https://img.spoonacular.com/recipes/633265-312x231.jpg" alt="Bacon &amp; Egg Toast Cups" width="100">
+        <p>Used ingredients: 3</p>
+        <p>Missing ingredients: 1</p>
+        <a href="https://spoonacular.com/recipes/bacon-&amp;-egg-toast-cups-633265" target="_blank">View Full Recipe</a>
+      </div>
+
+
+      <div class="recipe">
+        <h3>Bacon &amp; Egg Toast Cups</h3>
+        <img src="https://img.spoonacular.com/recipes/633265-312x231.jpg" alt="Bacon &amp; Egg Toast Cups" width="100">
+        <p>Used ingredients: 3</p>
+        <p>Missing ingredients: 1</p>
+        <a href="https://spoonacular.com/recipes/bacon-&amp;-egg-toast-cups-633265" target="_blank">View Full Recipe</a>
+      </div>
+
+    </div> -->
