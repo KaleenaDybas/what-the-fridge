@@ -36,7 +36,7 @@ function handleFetchingRecipes(e) {
 async function fetchRecipes(ingredients) {
   const response = await fetch(
     `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
-    }&number=1&apiKey=${SPOONACULAR_API_KEY}`
+    }&number=3&apiKey=${SPOONACULAR_API_KEY}`
   );
   const data = await response.json();
 
