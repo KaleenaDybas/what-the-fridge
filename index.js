@@ -3,44 +3,47 @@ const SPOONACULAR_API_KEY = '';
 
 async function asyncStuff(ingredients) {
   const response = await fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${
-      ingredients
+    `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients
     }&number=1&apiKey=${SPOONACULAR_API_KEY}`
   );
   console.log("RESPONSE")
   console.log(response)
 }
 
-
-// Hook into the form input to get the users input value to use for our api call
-const inputElement = document.getElementById("ingredients");
-console.log(inputElement);
-// Save the users input
-const userInput = inputElement.innerText;
-console.log(userInput)
-// Validate that the input doesn't have numbers and no leading or trailing spaces
-userInput.trim()
-console.log(userInput)
-// If there is no input, then we don't call the api
-if (!userInput.length) {
-  console.log("Inside this quick exit")
-  // return;
+function handleRecipe(e) {
+  e.preventDefault()
+  console.log("SUBMIT BUTTON CLICKED!! INSIDE HANDLE FUNCTION")
+  // Hook into the form input to get the users input value to use for our api call
+  const inputElement = document.getElementById("ingredients");
+  console.log(inputElement);
+  // Save the users input
+  const userInput = inputElement.innerText;
+  console.log(userInput)
+  // Validate that the input doesn't have numbers and no leading or trailing spaces
+  userInput.trim()
+  console.log(userInput)
+  // If there is no input, then we don't call the api
+  if (!userInput.length) {
+    console.log("Inside this quick exit")
+    // return;
+  }
+  // If there is an input, we use that in our api call to find recipes.
+  fetchRecipes(userInput)
 }
-// If there is an input, we use that in our api call to find recipes.
-fetchRecipes(userInput)
+
 
 function fetchRecipes(ingredients) {
   // fetch spoonacular recipes
   console.log(ingredients)
   return fakeAPIResponse;
-} 
+}
 
 // All the console logs above are getting put in the dev console each time the page loads right now
 // I need to make sure they are only called when I click the submit button or I'll run out 
 // of my free spoonacular api stuff/token?
 
 // hook into the form submit button
-const submitButton = document.getElementById(fetch-recipes-btn)
+const submitButton = document.getElementById('ingredient-form')
 // add event listener to submit
 submitButton.addEventListener("submit", handleRecipe)
 // when clicked, then do all the input stuff above
