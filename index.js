@@ -16,10 +16,10 @@ async function fetchRecipes(ingredients) {
   );
   const data = await response.json();
 
-  if (!data.length) {
-    appendTextToRecipeContParagraph("No recipes found.");
-    return;
-  }
+  // if (!data.length) {
+  //   appendTextToRecipeContParagraph("No recipes found.");
+  //   return;
+  // }
 
   displayRecipeCard(fakeAPIResponse)
 }
@@ -40,20 +40,39 @@ function handleFetchingRecipes(e) {
 
 
 function displayRecipeCard(recipes) {
-  
+  appendTextToRecipeContParagraph("")
+
   recipes.forEach(recipe => {
     console.log(recipe)
 
-    const name = document.createElement("h3")
-    name.innerText = recipe.title
+    const div = document.createElement("div");
+    div.className = "recipe";
 
-    const img = document.createElement("img")
-    img.src = recipe.image
-    img.alt = recipe.title
+    const title = document.createElement("h3")
+    title.innerText = recipe.title
+    div.appendChild(title);
 
+    const image = document.createElement("img")
+    image.src = recipe.image
+    image.alt = recipe.title
+    image.width = 100;
+    div.appendChild(image);
 
-    recipesContainer.append(name);
-    recipesContainer.append(img);
+    const usedIngredients = document.createElement("p");
+    usedIngredients.textContent = `Used ingredients: ${recipe.usedIngredientCount}`;
+    div.appendChild(usedIngredients);
+
+    const missingIngredients = document.createElement("p");
+    missingIngredients.textContent = `Missing ingredients: ${recipe.missedIngredientCount}`;
+    div.appendChild(missingIngredients);
+
+    const link = document.createElement("a");
+    link.href = `https://spoonacular.com/recipes/${recipe.title.toLowerCase().replace(/ /g, "-")}-${recipe.id}`;
+    link.target = "_blank";
+    link.textContent = "View Full Recipe";
+    div.appendChild(link);
+
+    recipesContainer.appendChild(div);
   })
 }
 
