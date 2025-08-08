@@ -10,10 +10,11 @@ function appendTextToRecipeContParagraph(text) {
 }
 
 function validateInput(input) {
+  let isValidInput = true;
   const regex = /\d/; // Regular expression to check for numbers aka `d` for digits
-  return !regex.test(input);
+  isValidInput = !regex.test(input) && input.length > 0
+  return isValidInput
 }
-
 
 function handleFetchingRecipes(e) {
   e.preventDefault()
@@ -26,12 +27,7 @@ function handleFetchingRecipes(e) {
     document.getElementById("error-message").style.display = "block";
     return;
   }
-
   document.getElementById("error-message").style.display = "none";
-
-  if (!userInput.length) {
-    return;
-  }
 
   appendTextToRecipeContParagraph("Searching Recipes...")
   fetchRecipes(userInput)
@@ -52,7 +48,6 @@ async function fetchRecipes(ingredients) {
   displayRecipeCard(fakeAPIResponse)
   // displayRecipeCard(data)
 }
-
 
 function displayRecipeCard(recipes) {
   appendTextToRecipeContParagraph("")
@@ -128,8 +123,3 @@ function displayRecipeCard(recipes) {
     recipesContainer.appendChild(div);
   })
 }
-
-
-// Stretch goal:
-// ability to convert recipe from cups to grams and back
-// DONE - number validation on input

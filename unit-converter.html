@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ingredient Unit Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main>
+
+    <header>
+      <h1>Ingredient Converter 🧪</h1>
+      <a href="index.html">← Back to Recipe Search</a>
+    </header>
+
+    <section>
+      <h2>Convert Cups and Grams</h2>
+      <input type="number" id="amount-input" placeholder="Enter amount" step="any" />
+      <select id="conversion-direction">
+        <option value="cupsToGrams">Cups → Grams</option>
+        <option value="gramsToCups">Grams → Cups</option>
+      </select>
+      <button id="convert-btn">Convert</button>
+      <p id="conversion-result"></p>
+    </section>
+  </main>
+
+  <script src="unit-converter.js"></script>
+</body>
+</html>

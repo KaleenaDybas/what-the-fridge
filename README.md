@@ -1,4 +1,4 @@
-[] Two pages
+[x] Two pages - index.html & unit-conversion.html
 [x] API Call
 [] One media query
 
@@ -7,4 +7,5 @@
   - `renderRecipes()`
 [x] Use a regular expression to validate user input and either prevent the invalid input or inform the user about it (in all cases prevent invalid input from being stored or saved).
   - `handleFetchingRecipes` && `validateInput`
-[] Convert user input between two formats and display the result. (e.g. Fahrenheit to Celcius, kilograms to pounds, etc)
+[x] Convert user input between two formats and display the result. (e.g. Fahrenheit to Celcius, kilograms to pounds, etc)
+ - `convertCupsAndGrams`
