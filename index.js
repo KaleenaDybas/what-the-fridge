@@ -52,6 +52,14 @@ async function fetchRecipes(ingredients) {
 function displayRecipeCard(recipes) {
   appendTextToRecipeContParagraph("")
 
+  // When I want to overwrite the recipes, not rendered them all between calls
+  const recipeCards = document.getElementsByClassName("recipe-card")
+  if (recipeCards.length > 0) {
+    Array.from(recipeCards).forEach(recipeCard => {
+      recipesContainer.removeChild(recipeCard)
+    })
+  }
+
   recipes.forEach(recipe => {
     const div = document.createElement("div");
     div.className = "recipe-card";
